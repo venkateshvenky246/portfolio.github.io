@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venkatesh Thota | Portfolio</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif}
+html{scroll-behavior:smooth}
+body{background:#020617;color:#e5e7eb;letter-spacing:.3px}
+
+/* NAVBAR */
+header{
+ position:fixed;top:0;width:100%;padding:20px 8%;
+ display:flex;justify-content:space-between;align-items:center;
+ background:rgba(2,6,23,.9);backdrop-filter:blur(10px);z-index:1000
+}
+header h2{color:#facc15}
+nav a{color:#e5e7eb;margin-left:25px;text-decoration:none}
+nav a:hover{color:#facc15}
+
+/* GRID */
+.grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:30px
+}
+
+/* HERO */
+.hero{
+ min-height:100vh;display:flex;align-items:center;
+ padding:120px 8% 60px;
+ background:linear-gradient(135deg,#020617,#020b1f)
+}
+.hero-container{display:flex;gap:70px;align-items:center;width:100%}
+.hero-image{flex:1;display:flex;justify-content:center}
+.hero-image img{
+ max-width:420px;width:100%;border-radius:22px;
+ box-shadow:0 25px 60px rgba(0,0,0,.6);
+ animation:float 6s ease-in-out infinite
+}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+.hero-content{flex:1}
+.hero-content h1{font-size:48px}
+.hero-content h1 span{color:#facc15}
+.hero-content h3{margin:15px 0;color:#facc15}
+.hero-content p{max-width:520px;line-height:1.7;margin-bottom:30px}
+.buttons{display:flex;gap:15px}
+.btn{
+ padding:12px 28px;border-radius:30px;font-weight:600;
+ text-decoration:none;position:relative;overflow:hidden
+}
+.btn.primary{background:#facc15;color:#020617}
+.btn.outline{border:2px solid #facc15;color:#facc15}
+.btn::before{
+ content:"";position:absolute;inset:0;
+ background:rgba(255,255,255,.15);
+ transform:translateX(-100%);transition:.4s
+}
+.btn:hover::before{transform:translateX(0)}
+
+/* GLOBAL SECTIONS */
+section{
+ padding:80px 8%;scroll-margin-top:100px;
+ animation:fadeUp .9s ease both
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{
+ font-size:36px;
+ background:linear-gradient(90deg,#facc15,#fde047);
+ -webkit-background-clip:text;-webkit-text-fill-color:transparent
+}
+.section-title p{color:#9ca3af}
+
+/* GRIDS */
+.experience-grid,.projects-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px
+}
+/* RESPONSIVE */
+@media(max-width:900px){
+ .hero-container{flex-direction:column;text-align:center}
+ .buttons{justify-content:center}
+ nav{display:none}
+}
+
+/* CARDS */
+.experience-card,.project-card{
+ background:#020b1f;border-radius:18px;
+ transition:.3s;position:relative
+}
+.experience-card{padding:25px;border-left:5px solid #facc15}
+.project-card{overflow:hidden}
+.experience-card:hover,.project-card:hover{
+ transform:translateY(-8px);
+ box-shadow:0 20px 40px rgba(0,0,0,.5)
+}
+
+/* EXPERIENCE */
+.experience-card h4{color:#facc15}
+.experience-card span{color:#9ca3af;font-size:14px}
+.experience-card ul{margin-top:15px;padding-left:18px}
+.experience-card ul li{font-size:14px;margin-bottom:8px;line-height:1.6}
+
+/* PROJECTS */
+.project-img{
+ height:200px;background-size:cover;background-position:center
+}
+.project-content{padding:20px}
+.project-content h5 a{color:#facc15;text-decoration:none}
+.project-content p{font-size:14px;line-height:1.6;margin:12px 0}
+
+/* BADGES */
+.badge{
+ display:inline-block;padding:6px 14px;border-radius:20px;
+ font-size:12px;font-weight:600
+}
+.badge-warning{background:#facc15;color:#020617}
+.badge-info{background:#38bdf8;color:#020617}
+.badge-success{background:#22c55e;color:#020617}
+
+/* FOOTER */
+footer{
+ padding:40px 8%;text-align:center;
+ background:#020617;color:#9ca3af
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+ .hero-container{flex-direction:column;text-align:center}
+ .buttons{justify-content:center}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <h2>Venkatesh Thota</h2>
+<nav>
+  <a href="#">Home</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <!-- NEW -->
+  <a href="#tech-stack">Technologies</a>
+  <a href="#tools">Tools</a>
+  <a href="#projects">Projects</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+ <div class="hero-container">
+  <div class="hero-image">
+   <img src="images/profile.jpg" alt="Venkatesh">
+  </div>
+  <div class="hero-content">
+   <h1>Hi, I’m <span>Venkatesh Thota</span></h1>
+   <h3>Support Engineer | Automation & Data</h3>
+   <p>
+    Support Engineer at WiseTech Global with experience in enterprise
+    applications, SQL analytics, automation, and incident management.
+   </p>
+   <div class="buttons">
+    <a class="btn primary" href="#">Hire Me</a>
+    <a class="btn outline" href="#">Download CV</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+ <div class="section-title">
+  <h2>Experience</h2>
+  <p>Professional growth</p>
+ </div>
+
+ <div class="experience-grid">
+  <div class="experience-card">
+   <h4>Support Engineer – WiseTech Global</h4>
+   <span>AUG 2025 – Present</span>
+   <ul>
+    <li>Level 2 production support.</li>
+    <li>Automation, monitoring, SQL troubleshooting, Debugging</li>
+   </ul>
+  </div>
+
+  <div class="experience-card">
+   <h4>Associate Support Engineer – E2open</h4>
+   <span>AUG 2023 – AUG 2025</span>
+   <ul>
+    <li>Utilized ticketing tools such as Salesforce and ServiceNow to troubleshoot and resolve customer issues promptly.</li>
+	<li>Leveraged advanced data management skills, including expertise in SolidWorks PDM, to ensure seamless organization, version control, and collaboration within
+design and engineering projects.</li>
+	<li>Collaborated with cross-functional teams to escalate and resolve critical incidents.</li>
+  <li>Managed data files by configuring permissions in WinSCP and Unix, automated data processing using Automate Now tool.</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- PROGRAMMING & TECHNOLOGIES -->
+<section id="tech-stack">
+  <div class="section-title">
+    <h2>Programming & Technologies</h2>
+    <p>Core technical skills and expertise</p>
+  </div>
+
+  <div class="experience-grid">
+
+    <div class="experience-card">
+      <h4>Programming & Scripting</h4>
+      <p>Java, Python, Perl, SQL</p>
+    </div>
+
+    <div class="experience-card">
+      <h4>Automation & Debugging</h4>
+      <p>Scripting, Log Analysis, Performance Monitoring</p>
+    </div>
+
+    <div class="experience-card">
+      <h4>CRM & Monitoring</h4>
+      <p>Zabbix, AutomateNow, Salesforce, ServiceNow</p>
+    </div>
+
+  </div>
+</section>
+<!-- TOOLS & PLATFORMS -->
+<section id="tools">
+  <div class="section-title">
+    <h2>Tools & Platforms</h2>
+    <p>Enterprise systems and operational tools</p>
+  </div>
+
+  <div class="experience-grid">
+
+    <div class="experience-card">
+      <h4>Databases & Cloud</h4>
+      <p>SQL, Oracle ERP, SAP, Qlik</p>
+    </div>
+
+    <div class="experience-card">
+      <h4>System Administration</h4>
+      <p>Windows Server, RDC, PuTTY (VPN)</p>
+    </div>
+
+    <div class="experience-card">
+      <h4>ITSM & Ticketing Tools</h4>
+      <p>Salesforce, JIRA, ServiceNow</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+ <div class="section-title">
+  <h2>Education</h2>
+  <p>Academic background</p>
+ </div>
+
+ <div class="experience-grid">
+  <div class="experience-card">
+   <h4>B.Tech – Electronics & Communication Engineering</h4>
+   <span>2018 – 2022 | Vaagdevi Engineering College</span>
+  </div>
+    <div class="experience-card">
+   <h4>Inter – MPC </h4>
+   <span>2016 – 2018 | Sri Vyshavi Junior College</span>
+  </div>
+
+ </div>
+</section>
+
+<!-- MAJOR PROJECT -->
+<section id="major-project">
+ <div class="section-title">
+  <h2>Major Project</h2>
+  <p>Final Year Academic Project</p>
+ </div>
+
+ <div class="projects-grid">
+  <div class="project-card">
+   <div class="project-img" style="background-image:url('images/drone_project.jpg')"></div>
+   <div class="project-content">
+    <h5>Smart Surveillance Drone with Orbital GPS Tracking</h5>
+    <p>Autonomous drone for real-time monitoring using GPS and IoT.</p>
+    <span class="badge badge-success">Major Project</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ✅ ACHIEVEMENTS & PROJECTS (YOUR MISSING SECTION – NOW INCLUDED) -->
+<section id="projects">
+ <div class="section-title">
+  <h2>Achievements & Projects</h2>
+  <p>A few highlights of my technical and academic work</p>
+ </div>
+
+ <div class="projects-grid">
+
+  <div class="project-card">
+   <div class="project-img" style="background-image:url('images/best_PPT.jpg')"></div>
+   <div class="project-content">
+    <h5><a target="_blank" href="#">Outstanding Presentation on AI & Nanotechnology</a></h5>
+    <p>Delivered a high-impact presentation on AI and Nanotechnology advancements.</p>
+    <span class="badge badge-warning">Achievement</span>
+   </div>
+  </div>
+
+  <div class="project-card">
+   <div class="project-img" style="background-image:url('images/agri-hacthon.jpg')"></div>
+   <div class="project-content">
+    <h5><a target="_blank" href="#">Best Bedding Innovator – Agri Hackathon</a></h5>
+    <p>Presented drone technology innovations for modern agriculture.</p>
+    <span class="badge badge-info">Innovation</span>
+   </div>
+  </div>
+
+  <div class="project-card">
+   <div class="project-img" style="background-image:url('images/project_01.jpg')"></div>
+   <div class="project-content">
+    <h5><a target="_blank" href="#">IoT Voice-Controlled Robotic Vehicle</a></h5>
+    <p>Hands-free robotic system with voice control and obstacle avoidance.</p>
+    <span class="badge badge-success">IoT</span>
+   </div>
+  </div>
+
+ </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+ <div class="section-title">
+  <h2>Certifications</h2>
+  <p>Professional learning</p>
+ </div>
+
+ <div class="experience-grid">
+  <div class="experience-card"><h4>Python for Data Science</h4><span>Coursera</span></div>
+  <div class="experience-card"><h4>SQL for Data Analytics</h4><span>Coursera</span></div>
+  <div class="experience-card"><h4>AI & ML Fundamentals</h4><span>Infosys</span></div>
+  <div class="experience-card"><h4>IoT & Embedded Systems</h4><span>Pentagon Space</span></div>
+ </div>
+</section>
+
+<!-- BLOG & INTERESTS -->
+<section id="blog">
+ <div class="section-title">
+  <h2>Blog & Interests</h2>
+  <p>Beyond work</p>
+ </div>
+
+ <div class="experience-grid">
+  <div class="experience-card">
+   <h4>Technical Blog</h4>
+   <p>
+    <a href="https://venky246.blogspot.com" target="_blank" style="color:#facc15">
+     venky246.blogspot.com
+    </a>
+	<li>Please check out my blog for interesting science and tech information</li>
+   </p>
+  </div>
+
+  <div class="experience-card">
+   <h4>Interests</h4>
+   <ul>
+    <li>Automation & new technologies</li>
+    <li>Data analytics</li>
+    <li>IoT & AI</li>
+    <li>Technical blogging</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-title">
+    <h2>Contact</h2>
+    <p>Let’s connect and collaborate</p>
+  </div>
+
+  <div class="experience-grid">
+
+    <!-- EMAIL -->
+    <div class="experience-card">
+      <h4>Email</h4>
+      <p>
+        <a href="mailto:venkateshthota069@gmail.com"
+           style="color:#facc15; text-decoration:none;">
+          venkateshthota069@gmail.com
+        </a>
+      </p>
+    </div>
+
+    <!-- LINKEDIN -->
+    <div class="experience-card">
+      <h4>LinkedIn</h4>
+      <p>
+        <a href="https://www.linkedin.com/in/-venkatesh-thota"
+           target="_blank"
+           style="color:#facc15; text-decoration:none;">
+          linkedin.com/in/-venkatesh-thota
+        </a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+ <p>© 2025 Venkatesh Thota</p>
+</footer>
+
+</body>
+</html>
+
